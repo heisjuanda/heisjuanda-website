@@ -1,0 +1,110 @@
+.menu-btn {
+    position: fixed;
+    top: 5%;
+    right: 3%;
+    z-index: 100;
+
+    mix-blend-mode: difference;
+}
+
+.menu-btn>button {
+    border: none;
+    background-color: transparent;
+    border-bottom: 1px solid transparent;
+
+    font-size: 20px;
+    font-family: 'aileronL';
+    font-weight: 100;
+
+    color: var(--main-background);
+}
+
+.menu-btn>button:hover {
+    border-bottom: 1px solid var(--main-background);
+
+}
+
+.menu-container {
+    width: 100vw;
+    height: 100vh;
+
+    transition: transform 1s;
+    transition-timing-function: ease;
+
+    transform: translateX(-100vw);
+
+    position: fixed;
+    top: 0;
+    z-index: -99;
+
+    background-color: black;
+}
+
+.menu-container nav {
+    width: 100vw;
+    height: 100vh;
+
+    transform: translateX(-100vw);
+
+    transition: transform 1s;
+    transition-timing-function: ease-in-out;
+
+    display: flex;
+    align-items: center;
+
+    background-color: var(--main-background);
+}
+
+.menu-container ol {
+    margin: 0;
+    padding: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    text-align: left;
+}
+
+.menu-container li>p {
+    font-size: 90px;
+    font-family: 'aileronb';
+
+    margin: 0;
+
+    display: flex;
+}
+
+.menu-container li p>span {
+    cursor: pointer;
+
+    display: flex;
+
+    overflow: hidden;
+}
+
+.option-letters__menu {
+    display: inline-block;
+
+    transform: translateY(90px);
+
+    will-change: transform;
+}
+
+.menu-option__target {
+    transition: 0.3s;
+}
+
+.menu-container:has(.menu-option__target:hover) .menu-option__target:not(.menu-option__target:hover) {
+    opacity: 0.2;
+}
+
+@media screen and (max-width:420px) {
+    .menu-container li>p {
+        font-size: 80px;
+    }
+}
+@media screen and (max-width:300px) {
+    .menu-container li>p {
+        font-size: 70px;
+    }
+}
