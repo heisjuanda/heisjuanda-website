@@ -7,18 +7,18 @@
     padding: 0;
 
     width: 100vw;
-    height: 100vh;
+    height: 50vh;
 
     overflow: hidden;
 
-    background-color: wheat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: white;
 }
 
 .tech-tack-section canvas {
-    position: absolute;
-    top: 0;
-    left: 0;
-    
-    width: 100vw !important;
-    height: 100vh !important;
+    width: 50vw !important;
+    height: 50vh !important;
 }

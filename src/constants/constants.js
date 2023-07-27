@@ -1,3 +1,19 @@
+//logos
+import gsap from '../assets/img/techStack/gsap.png';
+import angular from '../assets/img/techStack/angular.png';
+import css from '../assets/img/techStack/css.png';
+import html from '../assets/img/techStack/html.png';
+import java from '../assets/img/techStack/java.png';
+import javaScript from '../assets/img/techStack/javaScript.png';
+import netlify from '../assets/img/techStack/netlify.png';
+import python from '../assets/img/techStack/python.png';
+import racket from '../assets/img/techStack/racket.png';
+import react from '../assets/img/techStack/react.png';
+import sass from '../assets/img/techStack/sass.png';
+import typeScript from '../assets/img/techStack/typeScript.png';
+import vite from '../assets/img/techStack/vite.png';
+import webpack from '../assets/img/techStack/webpack.png';
+
 //0
 import patatiasACasaLogo from '../assets/img/work/project/patitasACasa/patitasACasaLogo.webp';
 import patitasACasaMain from '../assets/img/work/project/patitasACasa/patitasACasaMain.webp';
@@ -35,25 +51,34 @@ export const PROJECTS = [
         `,
         about: {
             objetive: [
-                `Allow people to identify and interact with pets in need of a loving home by giving detailed profiles and pertinent information about each animal, advocating adoption as a feasible choice.`,
-                `Create a platform for pet owners to report their missing pets, allowing others in the community to help with the search by offering sightings, pertinent information, and promoting teamwork for a quick reunion.`,
-                `Provide useful information and instructional materials to pet owners and potential adopters, encouraging responsible pet ownership, correct care standards, and best practices for maintaining pets' well-being and happiness.`,
-                `Form alliances with local animal shelters, rescue groups, and veterinary clinics to ease the adoption process, share information, and coordinate efforts to enhance the application's reach and effect.`,
+                `Facilitate pet adoption through detailed profiles and information, promoting loving homes for animals in need.`,
+                `Create a pet reporting platform for swift reunions through community support and information sharing.`,
+                `Provide resources for responsible pet ownership, promoting well-being and happiness for pets.`,
+                `Partner with shelters, rescue groups, and clinics to streamline adoptions and expand app outreach.`,
             ],
             goal: [
-                `Aim to assist a considerable number of successful pet adoptions via the platform, with a goal of a specified number of pets finding loving homes within a specific timeframe.`,
-                `Strive to reconnect lost pets with their owners by aggressively promoting and supporting successful reunifications, with a goal of successfully reuniting a particular percentage of reported lost pets within a set timeframe.`,
-                `Based on user input, continuously improve the application's features and functioning, with the goal of implementing a specified number of changes or updates within certain development cycles. `,
-                `Work on expanding the application's reach to other areas or cities, with the goal of releasing in a particular number of new places within a given timeframe. `,
+                `Aim for successful pet adoptions, reaching a specific goal within a defined timeframe.`,
+                `Promote successful reunifications, striving to reconnect lost pets with owners within a specific timeframe.`,
+                `Continuously enhance app based on user input, aiming for specific updates within cycles.`,
+                `Expand app's reach to new areas, targeting specific releases in set timeframes.`,
             ],
-            tech: [
-                `aos V 2.3.4`,
-                `axios V 1.4.0`,
-                `react V 18.2.0`,
-                `react-slick V 0.29.0`,
-                `typescript V 5.0.2`,
-                `vite V 4.3.2`,
-            ],
+            tech: {
+                main: [
+                    react,
+                    typeScript,
+                    vite,
+                    html,
+                    css
+                ],
+                libraries: [
+                    `aos ^2.3.4`,
+                    `axios ^1.4.0`,
+                    `react ^18.2.0`,
+                    `react-slick ^0.29.0`,
+                    `typescript ^5.0.2`,
+                    `vite ^4.3.2`,
+                ],
+            },
         },
         demo: patitasACasaDemo,
         detailsImg: [
@@ -81,18 +106,23 @@ export const PROJECTS = [
         `,
         about: {
             objetive: [
-                `Make a user-friendly functional programming language, making it an effective tool for investigating the principles and concepts underpinning diverse programming paradigms.`,
-                `Integrate essential lambda calculus principles into FPL's core, allowing learners to understand the foundations of computing and their relevance in programming language semantics.`,
+                `Develop a user-friendly functional programming language for exploring diverse programming paradigms.`,
+                `Integrate lambda calculus in FPL's core for fundamental computing insights.`,
             ],
             goal: [
-                `Implement essential language features like as higher-order functions, closures, pattern matching, and recursion in FPL, ensuring that they are appropriately integrated and work as expected.`,
-                `Create a sustainable strategy to assure long-term upkeep, allowing it to remain a vital resource for learners all across the world.`
+                `Implement core language features (higher-order functions, closures, pattern matching, recursion) in FPL effectively.`,
+                `Develop a sustainable long-term strategy for global accessibility and maintenance.`
             ],
-            tech: [
-                `racket - scheme V 8.6`,
-                `eopl V 8.6`,
-                `sllgen V 1.0`
-            ],
+            tech: {
+                main: [
+                    racket
+                ],
+                libraries: [
+                    `racket - scheme ^8.6`,
+                    `eopl ^8.6`,
+                    `sllgen ^1.0`
+                ],
+            },
         },
         demo: programLanguageDemo,
         detailsImg: [
@@ -115,28 +145,39 @@ export const PROJECTS = [
         This "Personal Portfolio" provides an overview of my many efforts and accomplishments. Each project illustrates my dedication to constant improvement and keeping at the forefront of cutting-edge technology.`,
         about: {
             objetive: [
-                `Create a visually appealing and well-organized portfolio area that displays a wide range of projects.`,
-                `Through extensive project descriptions and case studies, use the website to exhibit my technical capabilities, problem-solving ability, and creative talents.`,
-                `Create a responsive website that adapts to multiple devices and screen sizes effortlessly, offering a seamless user experience for both desktop and mobile users.`,
-                `Highlight your essential skills and unique selling elements across the website so that future employers or collaborators may identify my core competencies at a look.`,
-                `By ensuring that the website design, style, and content adhere to industry standards and best practices, I can present myself as a polished and professional individual.`
+                `Craft an attractive, organized portfolio showcasing diverse projects.`,
+                `Showcase technical prowess and creativity via concise project descriptions and case studies on the website.`,
+                `Craft a responsive website with seamless user experience across multiple devices and screen sizes.`,
+                `Showcase core competencies and unique selling points to facilitate quick recognition by potential employers or collaborators.`,
+                `Present a polished and professional image by following industry standards and best practices in website design, style, and content.`
             ],
             goal: [
-                `Provide extensive project descriptions, images, and results to illustrate my problem-solving ability and the value I offered.`,
-                `Create a visually appealing and professional website design that matches my own brand and adheres to industry standards.`,
-                `Ensure that the website has easy navigation throughout, allowing users to readily reach different areas, projects, and your contact information.`,
-                `Create a responsive website that provides a consistent user experience across all platforms, including PCs, tablets, and smartphones.`,
-                `Track website traffic, user interaction, and the success of your portfolio in generating new possibilities with web analytics tools.`    
+                `Illustrate problem-solving ability and value offered through concise project descriptions, images, and results.`,
+                `Design visually appealing, professional website aligned with my brand and industry standards.`,
+                `Ensure easy navigation for users to access different areas, projects, and contact information.`,
+                `Build a responsive website for a consistent user experience on all devices (PCs, tablets, smartphones).`,
+                `Monitor website traffic, user interaction, and portfolio success with web analytics.`
             ],
-            tech: [
-                `react V 18.2.0`,
-                `vite V 4.3.9`,
-                `gsap 3.11.5`,
-                `locomotive scroll V 4.1.4`,
-                `lodash V 4.17.21`,
-                `lottie react V 2.4.0`,
-                `split-type V 0.3.3`
-            ],
+            tech: {
+                main: [
+                    react,
+                    vite,
+                    gsap,
+                    netlify,
+                    html,
+                    css
+                ],
+                libraries: [
+                `react ^18.2.0`,
+                `vite ^4.3.9`,
+                `gsap ^3.11.5`,
+                `locomotive scroll ^4.1.4`,
+                `lodash ^4.17.21`,
+                `lottie react ^2.4.0`,
+                `split-type ^0.3.3`,
+                `matter ^0.19.0`
+                ],
+            },
         },
         demo: 'portfolioDemo',
         detailsImg: [
@@ -164,4 +205,21 @@ export const SOCIAL = [
         name: 'Instagram',
         link: 'https://www.instagram.com/heisjuanda/',
     },
+];
+
+export const TECHSTACK = [
+    gsap,
+    angular,
+    css,
+    html,
+    java,
+    javaScript,
+    netlify,
+    python,
+    racket,
+    react,
+    sass,
+    typeScript,
+    vite,
+    webpack
 ];

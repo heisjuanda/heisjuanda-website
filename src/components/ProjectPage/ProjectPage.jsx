@@ -4,7 +4,10 @@ import { useEffect, useState, useRef, useCallback } from 'react';
 import getLetters from '../../helpers/getLetters';
 import LocomotiveScroll from 'locomotive-scroll';
 
+import { TechStack } from './TechStack/TechStack';
+
 import { PROJECTS } from '../../constants/constants';
+
 
 import arrowRight from '../../assets/img/icons/arrowRightW.png';
 import arrowDownW from '../../assets/img/icons/arrowDownW.png';
@@ -146,8 +149,8 @@ const ProjectPage = () => {
         <>
             {Array(5).fill().map((emptyElement, id) => {
                 return (
-                    <div 
-                        key={id} 
+                    <div
+                        key={id}
                         className={`project-page__next-project-transition block-${id}`}
                     ></div>
                 );
@@ -226,11 +229,11 @@ const ProjectPage = () => {
                                         );
                                     })}
                                 </div>
-                                <div className='section-content__about'>
+                                <div className='section-content__about minor-container'>
                                     <h2>
                                         TECH STACK
                                     </h2>
-                                    {project.about.tech.map((tech, id) => {
+                                    {project.about.tech.libraries.map((tech, id) => {
                                         return (
                                             <ol key={id}>
                                                 <li>
@@ -242,6 +245,7 @@ const ProjectPage = () => {
                                         );
                                     })}
                                 </div>
+                                <TechStack techStack={project.about.tech.main} />
                             </>
                         ) : null}
                     </div>

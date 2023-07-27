@@ -1,6 +1,10 @@
-import { useEffect , useCallback } from 'react';
+import { useEffect, useCallback } from 'react';
+
+import { TechStack } from '../ProjectPage/TechStack/TechStack';
 
 import { gsap } from 'gsap';
+
+import { TECHSTACK } from '../../constants/constants';
 
 import img1 from '../../assets/img/about/1.jpg';
 import img2 from '../../assets/img/about/2.jpg';
@@ -36,9 +40,6 @@ const About = () => {
         tl.to('.overlay', 0.5, {
             clipPath: 'polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)',
             ease: 'power4.inOut',
-            stagger: {
-                amount: 0,
-            }
         });
 
         tl.to('.img', 0.5, {
@@ -52,9 +53,12 @@ const About = () => {
             clipPath: 'polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)',
             ease: 'power4.inOut',
         });
+        tl.to('.about-section .container', {
+            height: '200vh',
+        });
     }, []);
 
-    useEffect (() => {
+    useEffect(() => {
         const tl = gsap.timeline();
         tl.from('h2 div', {
             duration: 0.5,
@@ -79,7 +83,12 @@ const About = () => {
     return (
         <section className='about-section'>
             <div className='container'>
-                <h1>your site content goes here</h1>
+                <div className='container-title'>
+                    <h1>My Tech Tools</h1>
+                </div>
+                <div className='about-section__tech-stack'>
+                    <TechStack techStack={TECHSTACK} />
+                </div>
             </div>
             <div className='loader-about'>
                 {img.map((img, id) => {
