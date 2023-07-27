@@ -212,7 +212,7 @@
     font-family: 'aileronL';
 
     width: 80%;
-    max-width: 400px;
+    max-width: 750px;
 
     margin-inline: auto;
 }
@@ -225,8 +225,8 @@
     opacity: 0.7;
 }
 
-.section-content__about>p {
-    font-size: clamp(20px, 2.5vw, 25px);
+.section-content__about p {
+    font-size: 16px;
     font-family: 'aileronL';
 }
 
@@ -238,14 +238,13 @@
     list-style: disc;
 }
 
-.section-content__about:last-child {
+.minor-container {
     max-width: 200px;
 }
 
-.section-content__about:last-child>h2 {
+.minor-container>h2 {
     text-align: center;
 }
-
 
 .project-page__section-details {
     display: flex;
@@ -267,8 +266,8 @@
 }
 
 .project-page__section-details>p {
-    font-size: clamp(18px, 2vw, 20px);
-    font-family: 'aileronL';
+    font-size: 18px;
+    font-family: 'aileronUL';
     text-align: center;
 
     width: 50%;

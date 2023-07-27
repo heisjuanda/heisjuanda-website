@@ -16,7 +16,7 @@ export const RoutesConfiguration = () => {
             <Routes>
                 <Route path='*' element={
                     <Suspense fallback={<Loader color={'white'} />}>
-                        <div />
+                        <div></div>
                     </Suspense>
                 } />
                 <Route path='/' element={<Home />} />

@@ -6,26 +6,30 @@
 }
 
 .about-section .container {
-    width: 100vw;
+    width: 99vw;
     height: 100vh;
 
-    position: fixed;
+    position: absolute;
 
     background-color: var(--main-background);
 }
 
-.about-section .container h1 {
+.about-section .container .container-title {
     width: 100%;
 
-    position: absolute;
-    top: 50%;
-    left: 50%;
-
-    transform: translate(-50%,-50%);
-
     font-size: 60px;
-    font-weight: 500;
+    font-family: 'aileronB';
     text-align: center;
+}
+
+.about-section__tech-stack {
+    width: 100%;
+
+    margin-inline: auto;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .loader-about {

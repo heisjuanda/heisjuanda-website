@@ -52,20 +52,20 @@ export const Menu = () => {
 
     const [wasClicked, setWasClicked] = useState(false);
     const [isClose, setIsClose] = useState(true);
-    const [currentPath, setCurrentPath] = useState('path');
+    //const [currentPath, setCurrentPath] = useState('path');
 
     const handleMenuOpen = useCallback(() => {
         const tl = gsap.timeline();
 
         menuOptionTextRef.current = Array.from(document.querySelectorAll('.menu-option__target'));
-        if (currentPath !== window.location.pathname) {
+        //if (currentPath !== window.location.pathname) {
             if (menuOptionTextRef.current.length > 0) {
                 for (const word of menuOptionTextRef.current) {
                     getLetters(word, 'option-letters__menu');
                 }
             }
-            setCurrentPath(window.location.pathname);
-        }
+            //setCurrentPath(window.location.pathname);
+        //}
         const areDefined = menuOptionsRef.current && menuContainerRef.current && menuOptionContainerRef.current;
         if (areDefined) {
             setWasClicked(true);
@@ -87,7 +87,7 @@ export const Menu = () => {
             });
             setIsClose((prev) => !prev);
         }
-    }, [currentPath]);
+    }, [/*currentPath*/]);
 
     const handleMenuClose = useCallback(() => {
         const tl = gsap.timeline();
