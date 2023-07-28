@@ -19,8 +19,10 @@ export const TechStack = (props) => {
         MouseConstraint = Matter.MouseConstraint;
 
     const canvasRef = useRef(null);
+    const buttonResetRef = useRef(null);
 
     useEffect(() => {
+        const btonReset = buttonResetRef.current;
         const handleMatterCreation = () => {
             let engine,
                 render;
@@ -105,15 +107,23 @@ export const TechStack = (props) => {
             }
         };
         handleMatterCreation();
+
+        if (btonReset) {
+            btonReset.addEventListener('click', handleMatterCreation);
+        }
         window.addEventListener('resize', handleMatterCreation);
 
         return () => {
+            if (btonReset) {
+                btonReset.addEventListener('click', handleMatterCreation);
+            }
             window.removeEventListener('resize', handleMatterCreation);
         };
     }, [Bodies, Composite, Engine, Mouse, MouseConstraint, Render, Runner, techStack]);
 
     return (
         <section className='tech-tack-section'>
+            <button ref={buttonResetRef}>Reset</button>
             <canvas ref={canvasRef}></canvas>
         </section>
     );

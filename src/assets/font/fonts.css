@@ -28,6 +28,6 @@
     font-family: 'aileronUL';
     src: url('aileron.ultralight-webfont.woff2') format('woff2'),
          url('aileron.ultralight-webfont.woff') format('woff');
-    font-weight: normal;
+    font-weight: lighter;
     font-style: normal;
 }
