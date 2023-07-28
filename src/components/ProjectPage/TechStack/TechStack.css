@@ -4,6 +4,7 @@
 
 .tech-tack-section {
     margin: 0;
+    margin-top: 2.5%;
     padding: 0;
 
     width: 100vw;
@@ -16,9 +17,35 @@
     align-items: center;
 
     background-color: white;
+
+    position: relative;
 }
 
 .tech-tack-section canvas {
     width: 50vw !important;
     height: 50vh !important;
+}
+
+.tech-tack-section button{
+    position: absolute;
+    top: 0;
+    left: 2%;
+
+    font-size: clamp(18px,2vw,20px);
+    font-family: 'aileronL';
+
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: white;
+
+    width:80px;
+
+    transition: background-color 0.3s, color 0.3s;
+
+    padding: 5px;
+}
+
+.tech-tack-section button:hover {
+    color: white;
+    background-color: black;
 }

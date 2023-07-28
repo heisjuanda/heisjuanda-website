@@ -5,6 +5,7 @@ const Loader = lazy(() => import("../components/Loader/Loader"));
 
 import { Menu } from "../components/Menu/Menu";
 import { Home } from '../components/Home/Home';
+const ErrorPage = lazy(() => import('../components/ErrorPage/ErrorPage'));
 const About = lazy(() => import('../components/About/About'));
 const Work = lazy(() => import('../components/Work/Work'));
 const ProjectPage = lazy(() => import('../components/ProjectPage/ProjectPage'));
@@ -16,7 +17,7 @@ export const RoutesConfiguration = () => {
             <Routes>
                 <Route path='*' element={
                     <Suspense fallback={<Loader color={'white'} />}>
-                        <div></div>
+                        <ErrorPage />
                     </Suspense>
                 } />
                 <Route path='/' element={<Home />} />

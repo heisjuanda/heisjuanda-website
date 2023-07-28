@@ -206,7 +206,7 @@ export const Menu = () => {
                                     </li>
                                 );
                             }
-                            if (location.pathname !== option.path) {
+                            if (`/${location.pathname.split('/')[1]}` !== option.path) {
                                 return (
                                     <li key={option.id}>
                                         <p>
