@@ -190,66 +190,6 @@ const ProjectPage = () => {
                         </div>
                     </div>
                 </main>
-                <article className='project-page__section-content'>
-                    <h2 id='about-project'>
-                        ABOUT
-                    </h2>
-                    <div>
-                        {project.about ? (
-                            <>
-                                <div className='section-content__about'>
-                                    <h2>
-                                        OBJETIVES
-                                    </h2>
-                                    {project.about.objetive.map((objetive, id) => {
-                                        return (
-                                            <ol key={id}>
-                                                <li>
-                                                    <p>
-                                                        {objetive}
-                                                    </p>
-                                                </li>
-                                            </ol>
-                                        );
-                                    })}
-                                </div>
-                                <div className='section-content__about'>
-                                    <h2>
-                                        GOALS
-                                    </h2>
-                                    {project.about.goal.map((goal, id) => {
-                                        return (
-                                            <ol key={id}>
-                                                <li>
-                                                    <p>
-                                                        {goal}
-                                                    </p>
-                                                </li>
-                                            </ol>
-                                        );
-                                    })}
-                                </div>
-                                <div className='section-content__about minor-container'>
-                                    <h2>
-                                        TECH STACK
-                                    </h2>
-                                    {project.about.tech.libraries.map((tech, id) => {
-                                        return (
-                                            <ol key={id}>
-                                                <li>
-                                                    <p>
-                                                        {tech}
-                                                    </p>
-                                                </li>
-                                            </ol>
-                                        );
-                                    })}
-                                </div>
-                                <TechStack techStack={project.about.tech.main} />
-                            </>
-                        ) : null}
-                    </div>
-                </article>
                 <article className='project-page__section-details'>
                     <h2>
                         PROJECT DETAILS
@@ -276,6 +216,66 @@ const ProjectPage = () => {
                                     </div>
                                 );
                             })
+                        ) : null}
+                    </div>
+                </article>
+                <article className='project-page__section-content'>
+                    <h2 id='about-project'>
+                        TECH STACK
+                    </h2>
+                    <div>
+                        {project.about ? (
+                            <>
+                                {/*<div className='section-content__about'>
+                                    <h2>
+                                        OBJETIVES
+                                    </h2>
+                                    {project.about.objetive.map((objetive, id) => {
+                                        return (
+                                            <ol key={id}>
+                                                <li>
+                                                    <p>
+                                                        {objetive}
+                                                    </p>
+                                                </li>
+                                            </ol>
+                                        );
+                                    })}
+                                </div>*/}
+                                {/*<div className='section-content__about'>
+                                    <h2>
+                                        GOALS
+                                    </h2>
+                                    {project.about.goal.map((goal, id) => {
+                                        return (
+                                            <ol key={id}>
+                                                <li>
+                                                    <p>
+                                                        {goal}
+                                                    </p>
+                                                </li>
+                                            </ol>
+                                        );
+                                    })}
+                                </div>*/}
+                                {/*<div className='section-content__about minor-container'>
+                                    <h2>
+                                        TECH STACK
+                                    </h2>
+                                    {project.about.tech.libraries.map((tech, id) => {
+                                        return (
+                                            <ol key={id}>
+                                                <li>
+                                                    <p>
+                                                        {tech}
+                                                    </p>
+                                                </li>
+                                            </ol>
+                                        );
+                                    })}
+                                </div>*/}
+                                <TechStack techStack={project.about.tech.main} />
+                            </>
                         ) : null}
                     </div>
                 </article>

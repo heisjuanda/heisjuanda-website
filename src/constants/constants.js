@@ -1,14 +1,19 @@
 //logos
 import gsap from '../assets/img/techStack/gsap.png';
 import angular from '../assets/img/techStack/angular.png';
+import axios from '../assets/img/techStack/axios.png';
 import css from '../assets/img/techStack/css.png';
 import html from '../assets/img/techStack/html.png';
 import java from '../assets/img/techStack/java.png';
 import javaScript from '../assets/img/techStack/javaScript.png';
+import locomotive from '../assets/img/techStack/locomotive.png';
+import matter from '../assets/img/techStack/matter.png';
 import netlify from '../assets/img/techStack/netlify.png';
 import python from '../assets/img/techStack/python.png';
 import racket from '../assets/img/techStack/racket.png';
+import racketEopl from '../assets/img/techStack/racketEopl.png'; 
 import react from '../assets/img/techStack/react.png';
+import reactRedux from '../assets/img/techStack/reactRedux.png';
 import sass from '../assets/img/techStack/sass.png';
 import typeScript from '../assets/img/techStack/typeScript.png';
 import vite from '../assets/img/techStack/vite.png';
@@ -42,10 +47,7 @@ export const PROJECTS = [
             patatiasACasaLogo,
         ],
         description: `
-        Through Patitas a Casa, users can easily navigate a world of wagging tails and whiskered wonders, 
-        discovering profiles of pets in need of a caring home. Our app showcases comprehensive information about each pet,
-        including their breed, age, personality traits, and heartwarming stories, enabling potential adopters to make well-informed decisions.
-        `,
+        Find your furry friend! Discover pets in need of a loving home, with detailed profiles featuring breed, age, personality, and heartwarming stories. Make informed adoption choices.`,
         intro: `
         "Patitas a Casa" is a professional and user-friendly website dedicated to the reporting and recovery of missing pets. Help us reunite lost dogs with their loving owners.
         `,
@@ -68,7 +70,8 @@ export const PROJECTS = [
                     typeScript,
                     vite,
                     html,
-                    css
+                    css,
+                    axios
                 ],
                 libraries: [
                     `aos ^2.3.4`,
@@ -97,10 +100,7 @@ export const PROJECTS = [
 
         ],
         description: `
-        The new program language, called "Fundamentals of Programming Languages" (FPL), is a functional programming language that is designed to help users understand how program languages work. 
-        FPL is based on the lambda calculus, a formal system of computation that is used to study the semantics of programming languages. 
-        FPL provides a number of features that make it well-suited for understanding program languages
-        `,
+        Introducing "Fundamentals of Programming Languages" (FPL), a functional language based on lambda calculus, aimed at deepening understanding of program languages. FPL's rich features aid in comprehending programming concepts.`,
         intro: `
         Set off on a journey of exploration with "FPL", learning about the inner workings of programming languages.
         `,
@@ -115,7 +115,8 @@ export const PROJECTS = [
             ],
             tech: {
                 main: [
-                    racket
+                    racket,
+                    racketEopl
                 ],
                 libraries: [
                     `racket - scheme ^8.6`,
@@ -140,7 +141,7 @@ export const PROJECTS = [
             'portfolioLogo',
         ],
         description: `
-        Welcome to my personal portfolio, a showcase of my experience as a professional and passionate web developer. My goal with this website is to provide a diverse collection of projects, experiences, and accomplishments that reflect my commitment to excellence and innovation.`,
+        Explore my web developer portfolio, a testament to my passion and expertise. Discover diverse projects and achievements that highlight my commitment to excellence and innovation. Welcome!`,
         intro: `
         This "Personal Portfolio" provides an overview of my many efforts and accomplishments. Each project illustrates my dedication to constant improvement and keeping at the forefront of cutting-edge technology.`,
         about: {
@@ -165,7 +166,10 @@ export const PROJECTS = [
                     gsap,
                     netlify,
                     html,
-                    css
+                    css,
+                    matter,
+                    locomotive,
+                    reactRedux
                 ],
                 libraries: [
                 `react ^18.2.0`,
@@ -209,15 +213,19 @@ export const SOCIAL = [
 
 export const TECHSTACK = [
     gsap,
+    axios,
     angular,
     css,
     html,
     java,
     javaScript,
     netlify,
+    locomotive,
     python,
     racket,
     react,
+    matter,
+    reactRedux,
     sass,
     typeScript,
     vite,

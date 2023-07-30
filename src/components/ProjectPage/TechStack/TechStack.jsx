@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types'
-import { useEffect, useRef } from 'react';
+import { useLayoutEffect, useRef } from 'react';
 
 import Matter from 'matter-js';
 
@@ -19,13 +19,20 @@ export const TechStack = (props) => {
         MouseConstraint = Matter.MouseConstraint;
 
     const canvasRef = useRef(null);
-    const buttonResetRef = useRef(null);
+    const buttonRef = useRef(null);
 
-    useEffect(() => {
-        const btonReset = buttonResetRef.current;
-        const handleMatterCreation = () => {
-            let engine,
-                render;
+    useLayoutEffect(() => {
+        let engine,
+            render,
+            runner,
+            mouse;
+        const handleResetCanvas = () => {
+            if (engine && render && runner && mouse) {
+                Engine.clear(engine);
+                Render.stop(render);
+                Runner.stop(runner);
+                Mouse.clearSourceEvents(mouse);
+            }
             if (canvasRef.current) {
                 engine = Engine.create();
                 render = Render.create({
@@ -43,8 +50,8 @@ export const TechStack = (props) => {
                     let box = Bodies.rectangle(
                         window.innerWidth / 2,
                         0,
-                        100,
-                        100,
+                        74,
+                        74,
                         {
                             label: 'hola',
                             density: 0.8,
@@ -63,36 +70,36 @@ export const TechStack = (props) => {
                     window.innerWidth / 2,
                     window.innerHeight,
                     window.innerWidth,
-                    10,
+                    1,
                     { isStatic: true });
                 let wallL = Bodies.rectangle(
                     window.innerWidth,
                     window.innerHeight / 2,
-                    10,
+                    1,
                     window.innerHeight,
                     { isStatic: true });
                 let wallR = Bodies.rectangle(
                     0,
                     window.innerHeight / 2,
-                    10,
+                    1,
                     window.innerHeight,
                     { isStatic: true });
                 let ciel = Bodies.rectangle(
                     window.innerWidth / 2,
                     0,
                     window.innerWidth,
-                    10,
+                    1,
                     { isStatic: true });
                 for (const box of boxes) {
                     Composite.add(engine.world, [box, ground, wallL, wallR, ciel]);
                 }
                 Render.run(render);
 
-                let runner = Runner.create();
+                runner = Runner.create();
 
                 Runner.run(runner, engine);
 
-                let mouse = Mouse.create(render.canvas);
+                mouse = Mouse.create(render.canvas);
                 let mouseConstraint = MouseConstraint.create(engine, {
                     mouse: mouse,
                     constraint: {
@@ -106,24 +113,30 @@ export const TechStack = (props) => {
                 Composite.add(engine.world, mouseConstraint);
             }
         };
-        handleMatterCreation();
+        handleResetCanvas();
 
-        if (btonReset) {
-            btonReset.addEventListener('click', handleMatterCreation);
+        if (buttonRef.current) {
+            buttonRef.current.addEventListener('click', handleResetCanvas);
         }
-        window.addEventListener('resize', handleMatterCreation);
+
+        window.addEventListener('resize', handleResetCanvas);
 
         return () => {
-            if (btonReset) {
-                btonReset.addEventListener('click', handleMatterCreation);
-            }
-            window.removeEventListener('resize', handleMatterCreation);
+            window.removeEventListener('resize', handleResetCanvas);
+            Engine.clear(engine);
+            Render.stop(render);
+            Runner.stop(runner);
+            Mouse.clearSourceEvents(mouse);
         };
     }, [Bodies, Composite, Engine, Mouse, MouseConstraint, Render, Runner, techStack]);
 
     return (
         <section className='tech-tack-section'>
-            <button ref={buttonResetRef}>Reset</button>
+            <button ref={buttonRef}>
+                <span>
+                    Reset
+                </span>
+            </button>
             <canvas ref={canvasRef}></canvas>
         </section>
     );

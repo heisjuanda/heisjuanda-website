@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef, useCallback } from 'react';
+import { useEffect,useLayoutEffect, useState, useRef, useCallback } from 'react';
 
 import LocomotiveScroll from 'locomotive-scroll';
 import { gsap } from 'gsap';
@@ -31,7 +31,7 @@ const Work = () => {
         setWindowWidth(window.innerWidth);
     }, []);
 
-    useEffect(() => {
+    useLayoutEffect(() => {
         const condition = windowWidth > 800;
         //locomotive
         let directionScroll = condition ? 'horizontal' : 'vertical';
