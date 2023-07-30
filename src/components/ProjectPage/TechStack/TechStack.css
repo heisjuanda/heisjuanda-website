@@ -8,7 +8,7 @@
     padding: 0;
 
     width: 100vw;
-    height: 50vh;
+    height: 70vh;
 
     overflow: hidden;
 
@@ -22,30 +22,34 @@
 }
 
 .tech-tack-section canvas {
-    width: 50vw !important;
-    height: 50vh !important;
+    width: 70vw !important;
+    height: 70vh !important;
 }
 
-.tech-tack-section button{
+.tech-tack-section button {
     position: absolute;
     top: 0;
-    left: 2%;
 
-    font-size: clamp(18px,2vw,20px);
+    box-sizing: border-box;
+
+    width: 80px;
+    height: 30px;
+
+    background-color: black;
+    border-radius: 6px;
+    border: 0px solid black;
+    color: white;
+
+    transition: 0.3s;
+
+    font-size: 16px;
+    text-align: center;
     font-family: 'aileronL';
-
-    border: 1px solid black;
-    border-radius: 10px;
-    background-color: white;
-
-    width:80px;
-
-    transition: background-color 0.3s, color 0.3s;
-
-    padding: 5px;
 }
 
 .tech-tack-section button:hover {
-    color: white;
-    background-color: black;
+    border: 1px solid black;
+    background-color: transparent;
+    color: black;
 }
+

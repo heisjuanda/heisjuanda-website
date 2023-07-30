@@ -25,6 +25,8 @@
     font-family: 'aileronB';
     font-size: clamp(65px, 18vw, 180px);
 
+    overflow: hidden;
+
     -webkit-clip-path: polygon(0 100%, 100% 100%, 100% 0, 0 0);
     clip-path: polygon(0 100%, 100% 100%, 100% 0, 0 0);
 }

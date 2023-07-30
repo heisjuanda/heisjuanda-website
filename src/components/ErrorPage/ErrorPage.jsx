@@ -11,7 +11,7 @@ const ErrorPage = () => {
 
     const handleGoHome = useCallback(() => {
         const tl = gsap.timeline();
-        tl.to('.container__go-back',{
+        tl.to('.container__go-back', {
             clipPath: 'circle(0% at 50% 50%)',
             duration: 0.3,
             ease: 'circ.in',
@@ -28,7 +28,7 @@ const ErrorPage = () => {
         });
         setTimeout(() => {
             history('/');
-        },2000);
+        }, 2000);
     }, [history]);
 
     useEffect(() => {
@@ -36,19 +36,22 @@ const ErrorPage = () => {
 
         tl.from('h2 div', {
             yPercent: 100,
-        });
-        tl.to('h2 div', {
-            duration: 1,
-            delay: 0.3,
-            yPercent: 0,
-            ease: 'power4.out',
+            duration: 0.5,
+            delay: 0.5,
+            ease: 'power1.out',
             stagger: {
                 amount: 0.3
             }
         });
-        tl.to('.container__go-back',{
+        tl.to('h2 div', {
+            yPercent: 0,
+            stagger: {
+                amount: 0.1
+            }
+        });
+        tl.to('.container__go-back', {
             clipPath: 'circle(51% at 50% 50%)',
-            duration: 0.3,
+            duration: 0.2,
             ease: 'circ.in',
         });
     }, []);

@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import getLetters from '../../helpers/getLetters';
 import { gsap } from 'gsap';
 
+import img1 from '../../assets/img/about/2.webp';
 import heisjuandaLogoBlack from '../../assets/img/icons/heisjuandaLogoB.webp';
 
 import './Home.css';
@@ -14,27 +15,39 @@ export const Home = () => {
 
     const titleRef = useRef([]);
     const aboutMeRef = useRef();
+    const animationTransitionRef = useRef();
+    const svgRef = useRef();
 
     const handleGoToAbout = useCallback(() => {
         const tl = gsap.timeline();
-        tl.to('.title-home__letters', {
-            delay: 0.5,
-            duration: 0.7,
+        tl.to('.title-home__letters', 0.7, {
             y: 100,
             ease: 'back.in',
             stagger: {
                 amount: 0.3
             }
         });
-        tl.to('.opcity-home__reveal', {
-            delay: 0,
-            duration: 0.7,
+        tl.to('.opcity-home__reveal', 0.5, {
             opacity: 0,
             ease: 'power1.in',
         });
+        tl.to('.opcity-home__reveal', {
+            zIndex: '-10',
+        });
+        if (svgRef.current && animationTransitionRef.current) {
+            const curve = "M0 502S175 272 500 272s500 230 500 230V0H0Z";
+            const flat = "M0 2S175 1 500 1s500 1 500 1V0H0Z";
+            tl.to(svgRef.current, 0.6, {
+                attr: { d: curve },
+                ease: "power3.in",
+            }).to(svgRef.current, 0.6, {
+                attr: { d: flat },
+                ease: "power3.out",
+            });
+        }
         setTimeout(() => {
             history('/about');
-        }, 2300);
+        }, 3550);
     }, [history]);
 
     useEffect(() => {
@@ -51,8 +64,13 @@ export const Home = () => {
                 el.style.transform = `rotate(${id * 22.5}deg)`;
             });
         }
-        tl.to('.title-home__letters', {
+        tl.to('.home-section__title img',{
             delay: 0.9,
+            duration: 0.5,
+            clipPath: 'circle(70.7% at 50% 50%)',
+            ease:'power1.inOut'
+        });
+        tl.to('.title-home__letters', {
             duration: 1,
             y: 0,
             ease: 'back.out',
@@ -62,18 +80,27 @@ export const Home = () => {
         });
         tl.to('.opcity-home__reveal', {
             duration: 0.5,
-            delay: 0,
-            opacity: 0.9,
+            opacity: 1,
             ease: 'power1.out',
         });
     }, []);
 
     return (
         <section className='home-section'>
+            <div ref={animationTransitionRef} className="loader-wrap">
+                <svg viewBox="0 0 1000 1000" preserveAspectRatio="none">
+                    <path ref={svgRef} d="M0,1005S175,995,500,995s500,5,500,5V0H0Z"></path>
+                </svg>
+            </div>
             <header className='home-section__title'>
-                <h1 className='title-target'>JUANDA</h1>
-                <h1 className='title-target'>YOUR FAVORITE</h1>
-                <h1 className='title-target'>DEVELOPER</h1>
+                <div>
+                    <h1 className='title-target'>JUANDA</h1>
+                    <h1 className='title-target'>YOUR FAVORITE</h1>
+                    <h1 className='title-target'>DEVELOPER</h1>
+                </div>
+                <div>
+                    <img className='opcity-home__reveal' src={img1} alt="Juan David Moreno Alfonso wearing a face mask" />
+                </div>
             </header>
             <article onClick={handleGoToAbout} className='home-section__about opcity-home__reveal'>
                 <h2 ref={aboutMeRef}>
