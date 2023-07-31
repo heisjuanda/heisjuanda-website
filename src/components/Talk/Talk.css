@@ -1,0 +1,274 @@
+.talk-section {
+    width: 100vw;
+    min-height: 100dvh;
+
+    overflow: hidden;
+
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+
+    background-color: var(--main-background);
+}
+
+.talk-section__title {
+    margin-inline: auto;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+}
+
+.talk-section__title h2 {
+    margin: 0;
+
+    font-size: clamp(40px, 7.5vw, 75px);
+    font-family: 'aileronB';
+    text-align: left;
+
+    -webkit-clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
+    clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
+
+    color: black;
+}
+
+.talk-section__title h2>div {
+    transform: translateY(100%);
+}
+
+.talk-section__title .title-email,
+.talk-section .title-social {
+    width: 100%;
+
+    padding: 5% 0% 5% 0%;
+}
+
+.talk-section__title .title-email p,
+.talk-section .title-social p {
+    font-size: 15px;
+    font-family: 'aileronUL';
+    text-align: left;
+
+    border: 1px solid none;
+    border-bottom: 1px solid transparent;
+
+    opacity: 0.7;
+    margin: 2px;
+    transition: opacity 0.2s;
+}
+
+.talk-section__title .title-social {
+    position: absolute;
+    bottom: 160px;
+
+    padding: 5% 0% 0% 0%;
+}
+
+.talk-section__title .title-email p:hover,
+.talk-section .title-social p:hover {
+    opacity: 1;
+}
+
+.talk-section .title-social p:hover {
+    border-bottom: 1px solid black;
+}
+
+.talk-section__title .title-email p a,
+.talk-section .title-social p a {
+    color: black;
+}
+
+.talk-section .title-social {
+    display: flex;
+    flex-direction: column;
+}
+
+.talk-section .title-social h4 {
+    margin: 0;
+
+    font-size: 20px;
+    font-family: 'aileronB';
+}
+
+.talk-section .title-social ol {
+    margin: 0;
+    padding: 0;
+
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+}
+
+.talk-section .talk-section__form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.talk-section .talk-section__form .form-fields__container div {
+    width: 40%;
+
+    padding: 2% 0% 0% 0%;
+}
+
+.talk-section .talk-section__form .form-fields__container .form-message{
+    width: 80%;
+}
+
+.talk-section .form-send {
+    width: 40%;
+
+    position: absolute;
+    bottom: 160px;
+}
+
+.talk-section .form-fields__container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.talk-section .talk-section__form h2 {
+    font-size: clamp(20px, 3vw, 30px);
+    font-family: 'aileronB';
+    text-align: left;
+}
+
+.talk-section .talk-section__form form .form-name,
+.talk-section .talk-section__form form .form-email,
+.talk-section .talk-section__form form .form-message,
+.talk-section .talk-section__form form .form-subject,
+.talk-section .talk-section__form form .form-company {
+    display: flex;
+    flex-direction: column;
+
+    margin-bottom: 20px;
+}
+
+.talk-section .talk-section__form form .form-name label,
+.talk-section .talk-section__form form .form-email label,
+.talk-section .talk-section__form form .form-message label,
+.talk-section .talk-section__form form .form-subject label,
+.talk-section .talk-section__form form .form-company label {
+    font-size: 14px;
+    font-family: 'aileronB';
+
+    margin-bottom: 10px;
+}
+
+.talk-section .talk-section__form form .form-name input,
+.talk-section .talk-section__form form .form-email input,
+.talk-section .talk-section__form form .form-subject input,
+.talk-section .talk-section__form form .form-company input,
+.talk-section .talk-section__form form .form-message textarea {
+    font-size: 16px;
+    font-family: 'aileronL';
+
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+
+    resize: none;
+}
+
+.talk-section .talk-section__form form .form-name input:focus,
+.talk-section .talk-section__form form .form-email input:focus,
+.talk-section .talk-section__form form .form-subject input:focus,
+.talk-section .talk-section__form form .form-company input:focus,
+.talk-section .talk-section__form form .form-message textarea:focus {
+    border-bottom: 1px solid black;
+
+    outline: none;
+}
+
+
+@media screen and (max-width:1100px) {
+    .talk-section {
+        display: grid;
+        grid-template-columns: 100%;
+    }
+
+    .talk-section__title {
+        position: unset;
+        align-items: unset;
+
+        overflow: hidden;
+
+        width: 100%;
+
+        margin-left: 5%;
+        padding: 0;
+    }
+
+    .talk-section__title .title-social {
+        position: absolute;
+        bottom: 3%;
+        left: 50%;
+        margin: 0;
+
+        transform: translate(-50%, 0%);
+        width: auto;
+    }
+
+    .talk-section__title .title-social h4 {
+        text-align: center;
+    }
+
+    .talk-section .talk-section__form {
+        transform: translateY(-20%);
+        overflow: hidden;
+    }
+
+    .talk-section__form div>h2 {
+        margin-left: 5%;
+    }
+
+    .talk-section .talk-section__form .form-fields__container div {
+        width: 40%;
+
+        padding: 2% 0% 0% 5%;
+    }
+
+    .talk-section .form-send {
+        padding: 0% 0% 0% 5%;
+
+        position: relative;
+        bottom: unset;
+    }
+}
+
+@media screen and (max-width:650px) {
+
+    .talk-section .talk-section__form {
+        transform: translateY(-11%);
+    }
+
+    .talk-section__form .form-fields__container {
+        flex-direction: column;
+    }
+
+    .talk-section .talk-section__form {
+        width: 90%;
+        margin-inline: auto;
+    }
+
+    .talk-section .talk-section__form .form-fields__container div,
+    .talk-section .talk-section__form .form-send {
+        width: 80%;
+    }
+
+    .talk-section__title .title-social {
+        bottom: 2%;
+    }
+
+    .talk-section__title {
+        width: 90%;
+        margin-inline: auto;
+    }
+
+    .talk-section__title>div {
+        margin-left: 5%;
+    }
+
+}

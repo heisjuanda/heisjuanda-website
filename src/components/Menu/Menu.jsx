@@ -12,32 +12,32 @@ export const Menu = () => {
     const menuOptions = [
         {
             id: 0,
-            name: 'HOME',
+            name: 'Home',
             path: '/',
         },
         {
             id: 1,
-            name: 'ABOUT',
+            name: 'About',
             path: '/about',
         },
         {
             id: 2,
-            name: 'WORK',
+            name: 'Work',
             path: '/project',
         },
         {
             id: 3,
-            name: 'TALK',
+            name: 'Talk',
             path: '/contact',
         },
         {
             id: 4,
-            name: 'MORE',
+            name: 'More',
             path: '/more',
         },
         {
             id: 5,
-            name: 'CLOSE',
+            name: 'Close',
             path: '',
         },
     ];
@@ -150,7 +150,7 @@ export const Menu = () => {
     }, [history]);
 
     useEffect(() => {
-        const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        const letters = "AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz";
 
         let interval = null;
 
@@ -186,11 +186,11 @@ export const Menu = () => {
             <div className='menu-btn'>
                 <button
                     ref={menuBtnRef}
-                    data-value="MENU"
+                    data-value="Menu"
                     onClick={isClose ? handleMenuOpen : handleMenuClose}
                     disabled={wasClicked}
                 >
-                    MENU
+                    Menu
                 </button>
             </div>
             <section ref={menuContainerRef} className='menu-container'>

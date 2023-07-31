@@ -267,7 +267,7 @@
 .project-page__section-details>p {
     font-size: 18px;
     font-family: 'aileronUL';
-    text-align: center;
+    text-align: left;
 
     width: 50%;
     min-width: 265px;

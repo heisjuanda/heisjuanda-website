@@ -9,11 +9,11 @@ import { TECHSTACK } from '../../constants/constants';
 
 import img1 from '../../assets/img/about/1.webp';
 import img2 from '../../assets/img/about/2.webp';
-import img3 from '../../assets/img/about/3.jpg';
+import img3 from '../../assets/img/about/3.webp';
 import img4 from '../../assets/img/about/4.webp';
-import img5 from '../../assets/img/about/5.jpg';
-import img6 from '../../assets/img/about/6.jpg';
-import img7 from '../../assets/img/about/7.jpg';
+import img5 from '../../assets/img/about/5.webp';
+import img6 from '../../assets/img/about/6.webp';
+import img7 from '../../assets/img/about/7.webp';
 
 import './About.css';
 
@@ -131,13 +131,13 @@ const About = () => {
             </div>
             <div onClick={handleOverlayClick} className='overlay'>
                 <div className='col'>
-                    <h2><div>AN UNKNOW</div></h2>
-                    <h2><div>DEVELOPER</div></h2>
-                    <h2><div>TILL NOW</div></h2>
+                    <h2><div>An unknow</div></h2>
+                    <h2><div>Developer</div></h2>
+                    <h2><div>Till now</div></h2>
                 </div>
             </div>
             <div className='col click-here'>
-                <h2><span>click </span> anywhere to know him</h2>
+                <h2><span>Click </span> anywhere to know him</h2>
             </div>
         </section>
     );

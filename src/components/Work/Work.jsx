@@ -14,10 +14,10 @@ const Work = () => {
 
     const headerSectionRef = useRef();
     const animationRef = useRef();
+    const locomotiveRef = useRef();
 
     const [windowWidth, setWindowWidth] = useState(0);
-    const [locomotive, setLocomotive] = useState();
-
+ 
     const handleTransition = useCallback(() => {
         animationRef.current = Array.from(document.querySelectorAll('.transition-project'));
         if (animationRef.current.length > 0) {
@@ -36,7 +36,7 @@ const Work = () => {
         //locomotive
         let directionScroll = condition ? 'horizontal' : 'vertical';
 
-        const scroll = new LocomotiveScroll({
+        locomotiveRef.current = new LocomotiveScroll({
             el: document.querySelector('.work-section'),
             smooth: true,
             smoothMobile: true,
@@ -59,10 +59,10 @@ const Work = () => {
                 multiplier: 2,
             },
         });
-        setLocomotive(scroll);
 
         gsap.registerPlugin(ScrollTrigger);
-        if (condition) {
+        if (condition && locomotiveRef.current) {
+            const scroll = locomotiveRef.current;
             ScrollTrigger.scrollerProxy('.work-section', {
                 scrollTop(value) {
                     return arguments.length ? scroll.scrollTo(value, 0, 0) : scroll.scroll.instance.scroll.x;
@@ -88,7 +88,7 @@ const Work = () => {
         }
 
         const handleScrollUpdate = () => {
-            scroll.update();
+            locomotiveRef.current.update();
         };
 
         const handleResize = () => {
@@ -99,7 +99,8 @@ const Work = () => {
 
         return () => {
             window.removeEventListener('resize', handleResize);
-            scroll.destroy();
+            locomotiveRef.current.destroy();
+            ScrollTrigger.killAll();
         }
     }, [windowWidth]);
 
@@ -118,18 +119,18 @@ const Work = () => {
                 <header ref={headerSectionRef} data-scroll-section className='work-section__title interactable'>
                     <h1>
                         <span data-scroll data-scroll-direction={windowWidth > 801 ? 'horizontal' : 'vertical'} data-scroll-speed={windowWidth > 801 ? '1' : "0.8"}>
-                            SOME
+                            Some
                         </span>
                         <span data-scroll data-scroll-direction='horizontal' data-scroll-speed={windowWidth > 801 ? '-1' : "0"}>
                             {windowWidth <= 801 ? (
                                 <div className='span'>
-                                    <span data-scroll data-scroll-direction={'horizontal'} data-scroll-speed="1">OF</span>
-                                    <span data-scroll data-scroll-direction={'horizontal'} data-scroll-speed="-1">MY</span>
+                                    <span data-scroll data-scroll-direction={'horizontal'} data-scroll-speed="1">Of</span>
+                                    <span data-scroll data-scroll-direction={'horizontal'} data-scroll-speed="-1">my</span>
                                 </div>
-                            ) : ('OF MY')}
+                            ) : ('Of my')}
                         </span>
                         <span data-scroll data-scroll-direction={windowWidth > 801 ? 'horizontal' : 'vertical'} data-scroll-speed={windowWidth > 801 ? '2' : "-0.8"}>
-                            PROJECTS
+                            Projects
                         </span>
                     </h1>
                 </header>
@@ -144,7 +145,7 @@ const Work = () => {
                                     description={project.description}
                                     images={[project.images[0], project.images[1]]}
                                     number={project.id}
-                                    scroll={locomotive}
+                                    scroll={locomotiveRef.current}
                                     transition={handleTransition}
                                 />
                             );
