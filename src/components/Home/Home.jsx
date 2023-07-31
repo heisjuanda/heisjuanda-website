@@ -94,9 +94,9 @@ export const Home = () => {
             </div>
             <header className='home-section__title'>
                 <div>
-                    <h1 className='title-target'>JUANDA</h1>
-                    <h1 className='title-target'>YOUR FAVORITE</h1>
-                    <h1 className='title-target'>DEVELOPER</h1>
+                    <h1 className='title-target'>JuanDa</h1>
+                    <h1 className='title-target'>Your favorite</h1>
+                    <h1 className='title-target'>Developer</h1>
                 </div>
                 <div>
                     <img className='opcity-home__reveal' src={img1} alt="Juan David Moreno Alfonso wearing a face mask" />

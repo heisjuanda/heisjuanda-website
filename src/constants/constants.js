@@ -1,6 +1,7 @@
 //logos
 import gsap from '../assets/img/techStack/gsap.png';
 import angular from '../assets/img/techStack/angular.png';
+import aos from '../assets/img/techStack/aos.png';
 import axios from '../assets/img/techStack/axios.png';
 import css from '../assets/img/techStack/css.png';
 import html from '../assets/img/techStack/html.png';
@@ -31,12 +32,12 @@ import programLanguageMain from '../assets/img/work/project/programLanguage/prog
 import programLanguageDemo from '../assets/img/work/project/programLanguage/programLanguageDemo.webp';
 import programLanguageDetailsPC from '../assets/img/work/project/programLanguage/programLanguageDetailsPC.webp';
 import programLanguageDetailsMB from '../assets/img/work/project/programLanguage/programLanguageDetailsMB.webp';
-/*2
-import portfolioLogo from './assets/images/projects/heisjuandaLogo.webp';
-import portfolioMain from './assets/images/projects/portfolioMain.webp';
-import portfolioDemo from './assets/images/projects/portfolioDemo.webp';
-import portfolioDetailsPC from './assets/images/projects/portfolioDetailsPC.webp';
-import portfolioDetailsMB from './assets/images/projects/portfolioDetailsMB.webp';*/
+//2
+import portfolioLogo from '../assets/img/icons/heisjuandaLogoW.webp';
+import portfolioMain from '../assets/img/work/project/portfolio/portfolioMain.webp';
+import portfolioDemo from '../assets/img/work/project/portfolio/portfolioDemo.webp';
+import portfolioDetailsPC from '../assets/img/work/project/portfolio/portfolioDetailsPC.webp';
+import portfolioDetailsMB from '../assets/img/work/project/portfolio/portfolioDetailsMB.webp';
 
 export const PROJECTS = [
     {
@@ -71,7 +72,8 @@ export const PROJECTS = [
                     vite,
                     html,
                     css,
-                    axios
+                    axios,
+                    aos
                 ],
                 libraries: [
                     `aos ^2.3.4`,
@@ -137,8 +139,8 @@ export const PROJECTS = [
         id: '3',
         title: 'Personal Portfolio ',
         images: [
-            'portfolioMain',
-            'portfolioLogo',
+            portfolioMain,
+            portfolioLogo,
         ],
         description: `
         Explore my web developer portfolio, a testament to my passion and expertise. Discover diverse projects and achievements that highlight my commitment to excellence and innovation. Welcome!`,
@@ -169,7 +171,7 @@ export const PROJECTS = [
                     css,
                     matter,
                     locomotive,
-                    reactRedux
+                    javaScript
                 ],
                 libraries: [
                 `react ^18.2.0`,
@@ -183,10 +185,10 @@ export const PROJECTS = [
                 ],
             },
         },
-        demo: 'portfolioDemo',
+        demo: portfolioDemo,
         detailsImg: [
-            'portfolioDetailsPC',
-            'portfolioDetailsMB'
+            portfolioDetailsPC,
+            portfolioDetailsMB
         ],
         date: '2023',
         gitLink: 'https://github.com/heisjuanda/porfolio-react',
@@ -208,7 +210,7 @@ export const SOCIAL = [
         id: 2,
         name: 'Instagram',
         link: 'https://www.instagram.com/heisjuanda/',
-    },
+    }
 ];
 
 export const TECHSTACK = [

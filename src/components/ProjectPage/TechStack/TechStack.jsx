@@ -3,6 +3,8 @@ import { useLayoutEffect, useRef } from 'react';
 
 import Matter from 'matter-js';
 
+import { Button } from '../../../common/Button/Button';
+
 import './TechStack.css';
 
 export const TechStack = (props) => {
@@ -115,6 +117,8 @@ export const TechStack = (props) => {
         };
         handleResetCanvas();
 
+        buttonRef.current = document.querySelector('.reset-btn__tech');
+
         if (buttonRef.current) {
             buttonRef.current.addEventListener('click', handleResetCanvas);
         }
@@ -132,11 +136,10 @@ export const TechStack = (props) => {
 
     return (
         <section className='tech-tack-section'>
-            <button ref={buttonRef}>
-                <span>
-                    Reset
-                </span>
-            </button>
+            <Button 
+                className={'reset-btn__tech'}
+                text='Reset'
+            />
             <canvas ref={canvasRef}></canvas>
         </section>
     );

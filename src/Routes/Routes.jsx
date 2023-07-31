@@ -9,6 +9,7 @@ const ErrorPage = lazy(() => import('../components/ErrorPage/ErrorPage'));
 const About = lazy(() => import('../components/About/About'));
 const Work = lazy(() => import('../components/Work/Work'));
 const ProjectPage = lazy(() => import('../components/ProjectPage/ProjectPage'));
+const Talk = lazy(() => import('../components/Talk/Talk'));
 
 export const RoutesConfiguration = () => {
     return (
@@ -34,6 +35,11 @@ export const RoutesConfiguration = () => {
                 <Route path='/project/:id' element={
                     <Suspense fallback={<Loader color={'rgb(15,15,15)'} />}>
                         <ProjectPage />
+                    </Suspense>
+                } />
+                <Route path='/contact' element={
+                    <Suspense fallback={<Loader color={'rgb(15,15,15)'} />}>
+                        <Talk />
                     </Suspense>
                 } />
             </Routes>

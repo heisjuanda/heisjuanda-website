@@ -156,31 +156,15 @@
     max-width: 150px;
     min-width: 120px;
     height: 25%;
+    max-height: 56px;
     min-height: 45px;
-
-    background-color: black;
-    border-radius: 6px;
-    border: 0px solid black;
-    color: white;
-
-    margin-left: clamp(30px, 10%, 50px);
-
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    gap: 3px;
-
-    transition: 0.3s;
 
     font-size: 16px;
     font-family: 'aileronL';
 }
 
-.container__des-see button:hover {
-    border: 1px solid black;
-    background-color: transparent;
-    color: black;
+.container__des-see button:hover span {
+    opacity: 0.5;
 }
 
 .container__des-see button span {

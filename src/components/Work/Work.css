@@ -60,7 +60,7 @@
     bottom: 0;
 
     width: 100vw;
-    height: 100vh;
+    height: 100dvh;
 
     transform: translateY(100vh);
 
@@ -98,7 +98,7 @@
         background-color: white;
 
         min-width: 100vw;
-        min-height: 100vh;
+        min-height: 100dvh;
 
         color: black;
 
@@ -116,7 +116,7 @@
         flex: 0 0 auto;
 
         min-width: 100vw;
-        min-height: 100vh;
+        min-height: 100dvh;
 
         scroll-snap-align: start;
     }

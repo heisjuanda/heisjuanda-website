@@ -22,7 +22,7 @@ const ProjectPage = () => {
 
     const projectTitleRef = useRef([]);
     const transitionSectionRef = useRef();
-    const animationTargetRef = useRef(null);
+    const animationTargetRef = useRef([]);
     const loadImgRef = useRef([]);
 
     const [project, setProject] = useState({});
@@ -165,7 +165,7 @@ const ProjectPage = () => {
                                         key={id}
                                         className='title__target'
                                     >
-                                        {word.toUpperCase()}
+                                        {word}
                                     </h2>
                                 );
                             })}
@@ -192,7 +192,7 @@ const ProjectPage = () => {
                 </main>
                 <article className='project-page__section-details'>
                     <h2>
-                        PROJECT DETAILS
+                        Project details
                     </h2>
                     <p>
                         Discover detailed information about my most recent projects and see how I create aesthetically appealing and extremely effective websites
@@ -221,7 +221,7 @@ const ProjectPage = () => {
                 </article>
                 <article className='project-page__section-content'>
                     <h2 id='about-project'>
-                        TECH STACK
+                        Tech stack
                     </h2>
                     <div>
                         {project.about ? (
@@ -280,10 +280,10 @@ const ProjectPage = () => {
                     </div>
                 </article>
                 <article className='section-end__next'>
-                    <h2 ref={animationTargetRef} className='target-project__section'>
-                        Next Project
+                    <h2  className='target-project__section'>
+                        Next project
                     </h2>
-                    <button ref={animationTargetRef} className='target-project__section' onClick={handleNextProjectTransition}>
+                    <button className='target-project__section' onClick={handleNextProjectTransition}>
                         Here <span>
                             <img
                                 src={arrowRight}

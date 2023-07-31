@@ -1,0 +1,104 @@
+/*From uiverse*/
+.fancy {
+    background-color: transparent;
+    border: 1.5px solid rgb(15,15,15);
+    border-radius: 6px;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-weight: 390;
+    letter-spacing: 2px;
+    margin: 0;
+    outline: none;
+    overflow: visible;
+    padding: 8px 30px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    text-transform: none;
+    transition: all 0.3s ease-in-out;
+    user-select: none;
+    font-size: 13px;
+}
+
+.fancy::before {
+    content: " ";
+    width: 1.7rem;
+    height: 2px;
+    background: rgb(15,15,15);
+    opacity: 0.5;
+    top: 50%;
+    left: 1.5em;
+    position: absolute;
+    transform: translateY(-50%);
+    transform: translateX(230%);
+    transform-origin: center;
+    transition: background 0.3s linear, width 0.3s linear;
+}
+
+.fancy .text {
+    display: block;
+    text-align: left;
+    transition: all 0.3s ease-in-out;
+    color: rgb(15,15,15);
+    white-space: nowrap;
+    width: 100%;
+    transform: translateX(-5px);
+}
+
+.fancy .top-key {
+    height: 2.5px;
+    width: 1.5625rem;
+    top: -1.5px;
+    left: 0.625rem;
+    position: absolute;
+    background: white;
+    transition: width 0.4s ease-out, left 0.2s ease-out;
+}
+
+.fancy .bottom-key-1 {
+    height: 2.5px;
+    width: 1.5625rem;
+    right: 1.875rem;
+    bottom: -2px;
+    position: absolute;
+    background: white;
+    transition: width 0.4s ease-out, right 0.2s ease-out;
+}
+
+.fancy .bottom-key-2 {
+    height: 2.5px;
+    width: 0.625rem;
+    right: 0.625rem;
+    bottom: -2px;
+    position: absolute;
+    background: white;
+    transition: width 0.4s ease-out, right 0.2s ease-out;
+}
+
+.fancy:hover {
+    color: white;
+    background: rgb(15,15,15);
+}
+
+.fancy:hover::before {
+    width: 1.5rem;
+    background: white;
+}
+
+.fancy:hover .text {
+    color: white;
+    transform: translateX(10px);
+}
+
+.fancy:hover .top-key {
+    left: -2px;
+    width: 0px;
+}
+
+.fancy:hover .bottom-key-1,
+.fancy:hover .bottom-key-2 {
+    right: 0;
+    width: 0;
+}

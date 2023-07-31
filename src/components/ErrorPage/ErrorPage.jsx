@@ -61,13 +61,13 @@ const ErrorPage = () => {
             <header className='error-section__title'>
                 <div className='text-container'>
                     <h2>
-                        <div>PAGE</div>
+                        <div>Page</div>
                     </h2>
                     <h2>
-                        <div>404 NOT</div>
+                        <div>404 Not</div>
                     </h2>
                     <h2>
-                        <div>FOUND</div>
+                        <div>Found</div>
                     </h2>
                 </div>
             </header>
