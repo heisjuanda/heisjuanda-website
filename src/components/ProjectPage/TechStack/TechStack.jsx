@@ -51,7 +51,7 @@ export const TechStack = (props) => {
                 for (const logo of techStack) {
                     let box = Bodies.rectangle(
                         window.innerWidth / 2,
-                        0,
+                        window.innerHeight / 2,
                         74,
                         74,
                         {

@@ -245,6 +245,48 @@
     text-align: center;
 }
 
+.project-page__section-about {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 5%;
+
+    width: 80%;
+    margin-inline: auto;
+}
+
+.project-page__section-about>div {
+    margin-inline: auto;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    margin-top: 8%;
+}
+
+.project-page__section-about>div h2,
+.project-page__section-about>div p {
+    margin: 0;
+}
+
+.project-page__section-about>div h2 {
+    font-size: clamp(20px,2.5vw,25px);
+    font-family: 'aileronB';
+    margin-bottom: 20px;
+    opacity: 0.7;
+}
+
+.project-page__section-about>div p {
+    font-size: clamp(18px,2vw,20px);
+    font-family: 'aileronL';
+    margin-bottom: 20px;
+
+    white-space: nowrap;
+}
+
 .project-page__section-details {
     display: flex;
     flex-direction: column;
@@ -261,7 +303,7 @@
 
     margin-inline: auto;
 
-    margin-top: 10%;
+    margin-top: 5%;
 }
 
 .project-page__section-details>p {

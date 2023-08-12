@@ -175,7 +175,7 @@ const ProjectPage = () => {
                         <p>{project.intro}</p>
                         <div>
                             <span>
-                                <a href="#about-project">
+                                <a href="#start-project">
                                     <img src={arrowDownW} alt="down arrow" />
                                     <img src={arrowDownW} alt="down arrow" />
                                 </a>
@@ -190,8 +190,26 @@ const ProjectPage = () => {
                         </div>
                     </div>
                 </main>
+                <article className='project-page__section-about'>
+                    <div>
+                        <h2>
+                            Duration
+                        </h2>
+                        <p>
+                            {project?.about?.duration}
+                        </p>
+                    </div>
+                    <div>
+                        <h2>
+                            Service
+                        </h2>
+                        <p>
+                        {project?.about?.service}
+                        </p>
+                    </div>
+                </article>
                 <article className='project-page__section-details'>
-                    <h2>
+                    <h2 id='start-project'>
                         Project details
                     </h2>
                     <p>
@@ -220,7 +238,7 @@ const ProjectPage = () => {
                     </div>
                 </article>
                 <article className='project-page__section-content'>
-                    <h2 id='about-project'>
+                    <h2>
                         Tech stack
                     </h2>
                     <div>
@@ -280,7 +298,7 @@ const ProjectPage = () => {
                     </div>
                 </article>
                 <article className='section-end__next'>
-                    <h2  className='target-project__section'>
+                    <h2 className='target-project__section'>
                         Next project
                     </h2>
                     <button className='target-project__section' onClick={handleNextProjectTransition}>
