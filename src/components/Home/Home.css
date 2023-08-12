@@ -28,6 +28,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
+    position: relative;
 }
 
 .home-section__title {
@@ -78,7 +80,6 @@
 .home-section__about {
 
     background-color: transparent;
-    border-radius: 50%;
 
     width: 200px;
     height: 200px;
@@ -89,12 +90,38 @@
 
     opacity: 0;
 
-    display: grid;
-    place-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     cursor: pointer;
 
     animation: rotate__get-in-touch 25s linear infinite forwards;
+}
+
+.about-arrow__home {
+    animation: rotate__get-in-touch 25s linear infinite forwards reverse;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    height: 100%;
+}
+
+.about-arrow__home img {
+    transform: rotate(-30deg);
+
+    transition: transform 0.3s ease-out;
+
+    opacity: 0.8;
+    
+    width: 90px;
+}
+
+.home-section__about:hover .about-arrow__home img {
+    transform: rotate(-330deg);
 }
 
 .home-section__about>h2 {
@@ -170,20 +197,18 @@
         text-align: center;
     }
     .home-section__about {
-
-        border-radius: 50%;
-    
         width: 200px;
         height: 200px;
     
         position: absolute;
         top: -30px;
         left: -20px;
-    
+
         opacity: 0;
     
-        display: grid;
-        place-items: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     
         cursor: pointer;
     

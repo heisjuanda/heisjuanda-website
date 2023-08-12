@@ -5,6 +5,7 @@ import getLetters from '../../helpers/getLetters';
 import { gsap } from 'gsap';
 
 import img1 from '../../assets/img/about/2.webp';
+import arrowRB from '../../assets/img/icons/arrowRightB.png';
 import heisjuandaLogoBlack from '../../assets/img/icons/heisjuandaLogoB.webp';
 
 import './Home.css';
@@ -64,11 +65,11 @@ export const Home = () => {
                 el.style.transform = `rotate(${id * 22.5}deg)`;
             });
         }
-        tl.to('.home-section__title img',{
+        tl.to('.home-section__title img', {
             delay: 0.9,
             duration: 0.5,
             clipPath: 'circle(70.7% at 50% 50%)',
-            ease:'power1.inOut'
+            ease: 'power1.inOut'
         });
         tl.to('.title-home__letters', {
             duration: 1,
@@ -106,6 +107,9 @@ export const Home = () => {
                 <h2 ref={aboutMeRef}>
                     - ABOUT ME - ABOUT ME
                 </h2>
+                <div className='about-arrow__home'>
+                    <img src={arrowRB} alt="black right arrow" />
+                </div>
             </article>
             <article className='home-section__logo-heisjuanda opcity-home__reveal'>
                 <img src={heisjuandaLogoBlack} alt="he is juanda logo black color" />
