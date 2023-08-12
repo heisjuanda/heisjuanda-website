@@ -14,9 +14,9 @@ const Work = () => {
 
     const headerSectionRef = useRef();
     const animationRef = useRef();
-    const locomotiveRef = useRef();
 
     const [windowWidth, setWindowWidth] = useState(0);
+    const [locomotive, setLocomotive] = useState();
  
     const handleTransition = useCallback(() => {
         animationRef.current = Array.from(document.querySelectorAll('.transition-project'));
@@ -35,8 +35,7 @@ const Work = () => {
         const condition = windowWidth > 800;
         //locomotive
         let directionScroll = condition ? 'horizontal' : 'vertical';
-
-        locomotiveRef.current = new LocomotiveScroll({
+        let scroll = new LocomotiveScroll({
             el: document.querySelector('.work-section'),
             smooth: true,
             smoothMobile: true,
@@ -59,10 +58,10 @@ const Work = () => {
                 multiplier: 2,
             },
         });
+        setLocomotive(scroll);
 
         gsap.registerPlugin(ScrollTrigger);
-        if (condition && locomotiveRef.current) {
-            const scroll = locomotiveRef.current;
+        if (condition && scroll) {
             ScrollTrigger.scrollerProxy('.work-section', {
                 scrollTop(value) {
                     return arguments.length ? scroll.scrollTo(value, 0, 0) : scroll.scroll.instance.scroll.x;
@@ -88,7 +87,7 @@ const Work = () => {
         }
 
         const handleScrollUpdate = () => {
-            locomotiveRef.current.update();
+            scroll.update();
         };
 
         const handleResize = () => {
@@ -99,7 +98,7 @@ const Work = () => {
 
         return () => {
             window.removeEventListener('resize', handleResize);
-            locomotiveRef.current.destroy();
+            scroll.destroy();
             ScrollTrigger.killAll();
         }
     }, [windowWidth]);
@@ -145,7 +144,7 @@ const Work = () => {
                                     description={project.description}
                                     images={[project.images[0], project.images[1]]}
                                     number={project.id}
-                                    scroll={locomotiveRef.current}
+                                    scroll={locomotive}
                                     transition={handleTransition}
                                 />
                             );
