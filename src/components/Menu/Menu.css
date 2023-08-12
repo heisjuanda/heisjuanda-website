@@ -16,12 +16,32 @@
     font-family: 'aileronL';
     font-weight: 100;
 
+    text-align: center;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 65px;
+
     color: var(--main-background);
 }
 
-.menu-btn>button:hover {
-    border-bottom: 1px solid var(--main-background);
+.menu-btn>button::before {
+    content: "";
+    position: absolute;
+    width: 65px;
+    height: 1px;
+    bottom: 0;
+    left: 0;
+    background-color: white;
+    visibility: visible;
+    transform: scaleX(0);
+    transition: all .2s ease-in-out 0s;
+}
 
+.menu-btn>button:hover::before {
+    transform: scaleX(1);
 }
 
 .menu-container {
@@ -72,6 +92,9 @@
     margin: 0;
 
     display: flex;
+
+    -webkit-clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
+    clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
 }
 
 .menu-container li p>span {
@@ -80,18 +103,10 @@
     display: flex;
 
     overflow: hidden;
-}
-
-.option-letters__menu {
-    display: inline-block;
 
     transform: translateY(90px);
-
     will-change: transform;
-}
-
-.menu-option__target {
-    transition: 0.3s;
+    transition: opacity 0.3s;
 }
 
 .menu-container:has(.menu-option__target:hover) .menu-option__target:not(.menu-option__target:hover) {
@@ -103,6 +118,7 @@
         font-size: 80px;
     }
 }
+
 @media screen and (max-width:300px) {
     .menu-container li>p {
         font-size: 70px;

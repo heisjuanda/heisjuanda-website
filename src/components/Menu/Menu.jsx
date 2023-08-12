@@ -1,8 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import { useCallback, useRef, useState, useEffect } from 'react';
 
-import getLetters from '../../helpers/getLetters';
-
 import { gsap } from 'gsap';
 
 import './Menu.css';
@@ -46,26 +44,15 @@ export const Menu = () => {
 
     const menuContainerRef = useRef();
     const menuOptionsRef = useRef();
-    const menuOptionTextRef = useRef([]);
     const menuBtnRef = useRef();
     const menuOptionContainerRef = useRef();
 
     const [wasClicked, setWasClicked] = useState(false);
     const [isClose, setIsClose] = useState(true);
-    //const [currentPath, setCurrentPath] = useState('path');
 
     const handleMenuOpen = useCallback(() => {
         const tl = gsap.timeline();
 
-        menuOptionTextRef.current = Array.from(document.querySelectorAll('.menu-option__target'));
-        //if (currentPath !== window.location.pathname) {
-            if (menuOptionTextRef.current.length > 0) {
-                for (const word of menuOptionTextRef.current) {
-                    getLetters(word, 'option-letters__menu');
-                }
-            }
-            //setCurrentPath(window.location.pathname);
-        //}
         const areDefined = menuOptionsRef.current && menuContainerRef.current && menuOptionContainerRef.current;
         if (areDefined) {
             setWasClicked(true);
@@ -74,12 +61,12 @@ export const Menu = () => {
             menuContainerRef.current.style.transform = 'translateX(0vw)';
             setTimeout(() => {
                 setWasClicked(false);
-            }, 1500);
+            }, 1550);
             menuOptionsRef.current.style.transform = 'translateX(0vw)';
-            tl.to('.option-letters__menu', {
+            tl.to('.menu-option__target', {
                 duration: 0.5,
                 translateY: '0px',
-                ease: 'power1.inOut',
+                ease: 'power2.out',
                 delay: 1,
                 stagger: {
                     amount: 0.2
@@ -87,7 +74,7 @@ export const Menu = () => {
             });
             setIsClose((prev) => !prev);
         }
-    }, [/*currentPath*/]);
+    }, []);
 
     const handleMenuClose = useCallback(() => {
         const tl = gsap.timeline();
@@ -97,18 +84,18 @@ export const Menu = () => {
             setWasClicked(true);
             setTimeout(() => {
                 menuContainerRef.current.style.transform = 'translateX(-100vw)';
-            }, 800);
+            }, 1000);
             setTimeout(() => {
                 menuOptionsRef.current.style.transform = 'translateX(-100vw)';
-            }, 500);
+            }, 800);
             setTimeout(() => {
                 menuContainerRef.current.style.zIndex = '-99';
                 setWasClicked(false);
-            }, 1800);
-            tl.to('.option-letters__menu', {
-                duration: 0.6,
+            }, 1900);
+            tl.to('.menu-option__target', {
+                duration: 0.5,
                 translateY: '90px',
-                ease: 'power4.inOut',
+                ease: 'power4.in',
                 stagger: {
                     amount: 0.2
                 }
@@ -122,10 +109,10 @@ export const Menu = () => {
 
         const areDefined = menuOptionsRef.current && menuContainerRef.current && menuOptionContainerRef.current;
         if (areDefined) {
-            tl.to('.option-letters__menu', {
-                duration: 0.6,
+            tl.to('.menu-option__target', {
+                duration: 0.5,
                 translateY: '90px',
-                ease: 'power4.inOut',
+                ease: 'power4.in',
                 stagger: {
                     amount: 0.2
                 }
@@ -133,24 +120,24 @@ export const Menu = () => {
             setTimeout(() => {
                 history(`${path}`);
                 menuOptionContainerRef.current.style.transform = 'translateX(-100vw)';
-            }, 600)
+            }, 700)
             setWasClicked(true);
             setTimeout(() => {
                 menuContainerRef.current.style.transform = 'translateX(-100vw)';
-            }, 800);
+            }, 1000);
             setTimeout(() => {
                 menuOptionsRef.current.style.transform = 'translateX(-100vw)';
-            }, 500);
+            }, 800);
             setTimeout(() => {
                 menuContainerRef.current.style.zIndex = '-99';
                 setWasClicked(false);
-            }, 1800);
+            }, 1900);
             setIsClose(true);
         }
     }, [history]);
 
     useEffect(() => {
-        const letters = "AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz";
+        const letters = "abcdefghijklmnopqrstuvwxyz";
 
         let interval = null;
 
