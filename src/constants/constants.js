@@ -65,6 +65,8 @@ export const PROJECTS = [
                 `Continuously enhance app based on user input, aiming for specific updates within cycles.`,
                 `Expand app's reach to new areas, targeting specific releases in set timeframes.`,
             ],
+            duration: 'Ongoing',
+            service: 'Front-end designer',
             tech: {
                 main: [
                     react,
@@ -115,6 +117,8 @@ export const PROJECTS = [
                 `Implement core language features (higher-order functions, closures, pattern matching, recursion) in FPL effectively.`,
                 `Develop a sustainable long-term strategy for global accessibility and maintenance.`
             ],
+            duration: '2 months',
+            service: 'Engineering',
             tech: {
                 main: [
                     racket,
@@ -161,6 +165,8 @@ export const PROJECTS = [
                 `Build a responsive website for a consistent user experience on all devices (PCs, tablets, smartphones).`,
                 `Monitor website traffic, user interaction, and portfolio success with web analytics.`
             ],
+            duration: '1 month',
+            service: 'Front-end designer',
             tech: {
                 main: [
                     react,
@@ -216,6 +222,7 @@ export const SOCIAL = [
 export const TECHSTACK = [
     gsap,
     axios,
+    aos,
     angular,
     css,
     html,
