@@ -24,7 +24,7 @@
 .talk-section__title h2 {
     margin: 0;
 
-    font-size: clamp(40px, 7.5vw, 75px);
+    font-size: clamp(37px, 7.5vw, 75px);
     font-family: 'aileronB';
     text-align: left;
 
@@ -113,7 +113,7 @@
     padding: 2% 0% 0% 0%;
 }
 
-.talk-section .talk-section__form .form-fields__container .form-message{
+.talk-section .talk-section__form .form-fields__container .form-message {
     width: 80%;
 }
 
@@ -128,6 +128,7 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    gap: 5%;
 }
 
 .talk-section .talk-section__form h2 {
@@ -182,7 +183,6 @@
     outline: none;
 }
 
-
 @media screen and (max-width:1100px) {
     .talk-section {
         display: grid;
@@ -199,6 +199,10 @@
 
         margin-left: 5%;
         padding: 0;
+    }
+
+    .talk-section__title .title-email {
+        padding: 1.5% 0% 5% 0%;
     }
 
     .talk-section__title .title-social {
@@ -241,7 +245,7 @@
 @media screen and (max-width:650px) {
 
     .talk-section .talk-section__form {
-        transform: translateY(-11%);
+        transform: translateY(-14%);
     }
 
     .talk-section__form .form-fields__container {
@@ -256,6 +260,12 @@
     .talk-section .talk-section__form .form-fields__container div,
     .talk-section .talk-section__form .form-send {
         width: 80%;
+        margin: 0;
+        margin-bottom: 2%;
+    }
+    .talk-section .talk-section__form .form-send {
+        margin-bottom: 0%;
+        margin-top: 2%;
     }
 
     .talk-section__title .title-social {
@@ -269,6 +279,12 @@
 
     .talk-section__title>div {
         margin-left: 5%;
+    }
+
+    .talk-section__title>div:nth-child(2) {
+        padding: 0% 0% 5% 0%;
+        position: relative;
+        z-index: 5;
     }
 
 }
