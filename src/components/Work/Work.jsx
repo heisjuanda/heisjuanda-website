@@ -1,4 +1,4 @@
-import { useEffect,useLayoutEffect, useState, useRef, useCallback } from 'react';
+import { useEffect,useLayoutEffect, useState, useRef } from 'react';
 
 import LocomotiveScroll from 'locomotive-scroll';
 import { gsap } from 'gsap';
@@ -18,14 +18,14 @@ const Work = () => {
     const [windowWidth, setWindowWidth] = useState(0);
     const [locomotive, setLocomotive] = useState();
  
-    const handleTransition = useCallback(() => {
+    const handleTransition = () => {
         animationRef.current = Array.from(document.querySelectorAll('.transition-project'));
         if (animationRef.current.length > 0) {
             for (const divElement of animationRef.current) {
                 divElement.classList.add('animation-project');
             }
         }
-    }, []);
+    };
 
     useEffect(() => {
         setWindowWidth(window.innerWidth);

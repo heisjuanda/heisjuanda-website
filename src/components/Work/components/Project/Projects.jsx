@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import { debounce } from 'lodash';
-import { useEffect, useRef, useCallback } from 'react';
+import { useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import { Button } from '../../../../common/Button/Button';
@@ -22,16 +22,16 @@ export const Projects = (props) => {
 
     const targetImgRef = useRef([]);
 
-    const handleSeeProject = useCallback(() => {
+    const handleSeeProject =() => {
         transition();
         setTimeout(() => {
             history(`/project/${number - 1}`);
         }, 1010);
-    }, [history, number, transition]);
+    };
 
-    const handleImgUpdates = useCallback(() => {
+    const handleImgUpdates = () => {
         scroll ? scroll.update() : null;
-    }, [scroll]);
+    };
 
     useEffect(() => {
         if (width > 800) {

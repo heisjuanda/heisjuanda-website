@@ -1,4 +1,4 @@
-import { useEffect, useCallback, useLayoutEffect, useRef } from 'react';
+import { useEffect, useLayoutEffect, useRef } from 'react';
 
 import { TechStack } from '../ProjectPage/TechStack/TechStack';
 
@@ -25,7 +25,7 @@ const About = () => {
     const scrollRef = useRef();
     const arrowsRef = useRef([]);
 
-    const handleOverlayClick = useCallback(() => {
+    const handleOverlayClick = () => {
         const tl = gsap.timeline();
         tl.to('h2 div', 0.7, {
             yPercent: -110,
@@ -58,7 +58,7 @@ const About = () => {
         setTimeout(() => {
             scrollRef.current ? scrollRef.current.update() : null;
         }, 4800);
-    }, []);
+    };
 
     useEffect(() => {
         const tl = gsap.timeline();

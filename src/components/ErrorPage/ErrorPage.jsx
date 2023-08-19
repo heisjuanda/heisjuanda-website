@@ -1,4 +1,4 @@
-import { useEffect, useCallback } from 'react';
+import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import { gsap } from 'gsap';
@@ -9,7 +9,7 @@ const ErrorPage = () => {
 
     const history = useNavigate();
 
-    const handleGoHome = useCallback(() => {
+    const handleGoHome = () => {
         const tl = gsap.timeline();
         tl.to('.container__go-back', {
             clipPath: 'circle(0% at 50% 50%)',
@@ -29,7 +29,7 @@ const ErrorPage = () => {
         setTimeout(() => {
             history('/');
         }, 2000);
-    }, [history]);
+    };
 
     useEffect(() => {
         const tl = gsap.timeline();

@@ -1,4 +1,4 @@
-import { useEffect, useRef, useCallback } from 'react';
+import { useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import getLetters from '../../helpers/getLetters';
@@ -19,7 +19,7 @@ export const Home = () => {
     const animationTransitionRef = useRef();
     const svgRef = useRef();
 
-    const handleGoToAbout = useCallback(() => {
+    const handleGoToAbout = () => {
         const tl = gsap.timeline();
         tl.to('.title-home__letters', 0.7, {
             y: 100,
@@ -49,7 +49,7 @@ export const Home = () => {
         setTimeout(() => {
             history('/about');
         }, 3550);
-    }, [history]);
+    };
 
     useEffect(() => {
         const tl = gsap.timeline();

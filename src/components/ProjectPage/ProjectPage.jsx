@@ -29,7 +29,7 @@ const ProjectPage = () => {
     const [titleProject, setTitleProject] = useState([]);
     const [locomotive, setLocomotive] = useState();
 
-    const handleNextProjectTransition = useCallback(() => {
+    const handleNextProjectTransition = () => {
         animationTargetRef.current = Array.from(document.querySelectorAll('.target-project__section'));
         transitionSectionRef.current = Array.from(document.querySelectorAll('.project-page__next-project-transition'));
 
@@ -51,7 +51,7 @@ const ProjectPage = () => {
                 }
             }, 1610);
         }
-    }, [history, id]);
+    };
 
     const handleImgLoading = useCallback((scroll) => {
         loadImgRef.current = Array.from(document.querySelectorAll('.img-load__target'));
@@ -64,9 +64,9 @@ const ProjectPage = () => {
         }
     }, []);
 
-    const handleGitLink = useCallback(() => {
+    const handleGitLink = () => {
         window.open(project.gitLink, '_blank');
-    }, [project.gitLink]);
+    };
 
     useEffect(() => {
         handleImgLoading(locomotive);

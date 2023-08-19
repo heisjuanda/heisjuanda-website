@@ -1,8 +1,8 @@
-import { useCallback, useEffect } from "react";
+import { useEffect } from "react";
 
 import PropTypes from "prop-types";
 
-import { Loader } from "./component/Loader/Loader";
+import { LoaderCircle } from "./component/Loader/Loader";
 
 import { gsap } from "gsap";
 
@@ -15,7 +15,7 @@ import "./Modal.css";
 export const Modal = (props) => {
   const { title, message, type, setShowModal, loading } = props;
 
-  const handleCloseModal = useCallback(() => {
+  const handleCloseModal = () => {
     const tl = gsap.timeline();
     tl.to(".modal-body", 0.5, {
       translateY: "10%",
@@ -25,7 +25,7 @@ export const Modal = (props) => {
     setTimeout(() => {
       setShowModal(false);
     }, 500);
-  }, [setShowModal]);
+  };
 
   useEffect(() => {
     const tl = gsap.timeline();
@@ -42,7 +42,7 @@ export const Modal = (props) => {
       <section className="modal-body">
         {loading ? (
           <div className="modal-body__container">
-            <Loader />
+            <LoaderCircle />
             <header className="modal-body__title">
               <h2>Loading</h2>
             </header>

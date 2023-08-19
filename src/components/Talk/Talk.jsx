@@ -1,4 +1,4 @@
-import { useEffect, useCallback, useState } from "react";
+import { useEffect, useState } from "react";
 
 import { gsap } from "gsap";
 
@@ -14,7 +14,7 @@ const Talk = () => {
   const [showModal, setShowModal] = useState();
   const [modal, setModal] = useState();
 
-  const handleSubmit = useCallback(async (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     const data = Object.fromEntries(new window.FormData(e.target));
@@ -63,7 +63,7 @@ const Talk = () => {
         };
       });
     }
-  }, []);
+  };
 
   useEffect(() => {
     const tl = gsap.timeline();

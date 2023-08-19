@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import { useCallback, useRef, useState, useEffect } from 'react';
+import { useRef, useState, useEffect } from 'react';
 
 import { gsap } from 'gsap';
 
@@ -50,7 +50,7 @@ export const Menu = () => {
     const [wasClicked, setWasClicked] = useState(false);
     const [isClose, setIsClose] = useState(true);
 
-    const handleMenuOpen = useCallback(() => {
+    const handleMenuOpen = () => {
         const tl = gsap.timeline();
 
         const areDefined = menuOptionsRef.current && menuContainerRef.current && menuOptionContainerRef.current;
@@ -74,9 +74,9 @@ export const Menu = () => {
             });
             setIsClose((prev) => !prev);
         }
-    }, []);
+    };
 
-    const handleMenuClose = useCallback(() => {
+    const handleMenuClose = () => {
         const tl = gsap.timeline();
 
         const areDefined = menuOptionsRef.current && menuContainerRef.current;
@@ -102,9 +102,9 @@ export const Menu = () => {
             })
             setIsClose(true);
         }
-    }, []);
+    };
 
-    const handleMenuSelectOption = useCallback((path) => {
+    const handleMenuSelectOption = (path) => {
         const tl = gsap.timeline();
 
         const areDefined = menuOptionsRef.current && menuContainerRef.current && menuOptionContainerRef.current;
@@ -134,7 +134,7 @@ export const Menu = () => {
             }, 1900);
             setIsClose(true);
         }
-    }, [history]);
+    };
 
     useEffect(() => {
         const letters = "abcdefghijklmnopqrstuvwxyz";

@@ -1,5 +1,7 @@
 import PropTypes from 'prop-types';
 
+import {LoaderCircle} from '../Modal/component/Loader/Loader';
+
 import './Loader.css';
 
 const Loader = ({ color }) => {
@@ -9,7 +11,9 @@ const Loader = ({ color }) => {
             style={
                 {backgroundColor: color}
             }
-        ></div>
+        >
+            <LoaderCircle />
+        </div>
     );
 };
 
